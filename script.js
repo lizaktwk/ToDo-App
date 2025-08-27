@@ -34,18 +34,19 @@ let completedTasks = 0;
 let progressBarFill = document.querySelector("#progress-bar-fill");
 let taskProgress = document.querySelector("#task-progress");
 
+let addTaskBtn = document.getElementById("addTaskButton");
+
 let myTasks = document.querySelector(".my-tasks");
 let taskContainer = document.querySelector(".task-container");
-
-let addTaskBtn = document.getElementById("addTaskButton");
-addTaskBtn.addEventListener("click", function (event) {
-  event.preventDefault();
-  addTask();
-});
 
 document.getElementById("week-day").textContent = currentDay;
 document.getElementById("date").textContent = date.getDate();
 document.getElementById("month").textContent = currentMonth;
+
+addTaskBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  addTask();
+});
 
 function updateTaskProgress() {
   const totalTasks = tasks.length;
@@ -70,8 +71,36 @@ function addTask() {
       <span class="task-text">${taskText}</span>
       <button class="delete-task">X</button>
     `;
+    const checkBox = taskItem.querySelector("input[type='checkbox']");
+    checkBox.addEventListener("change", function () {
+      if (checkBox.checked) {
+        completedTasks++;
+      } else {
+        completedTasks--;
+      }
+      updateTaskProgress();
+    });
+
+    const deleteBtn = taskItem.querySelector(".delete-task");
+    deleteBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      deleteTask(deleteBtn);
+    });
     myTasks.appendChild(taskItem);
     taskInput.value = "";
     updateTaskProgress();
   }
+}
+
+function deleteTask(button) {
+  button.parentElement.remove();
+  const taskText = button.parentElement.querySelector(".task-text").textContent;
+  const index = tasks.indexOf(taskText);
+  if (index > -1) {
+    tasks.splice(index, 1);
+  }
+  if (button.parentElement.querySelector("input[type='checkbox']").checked) {
+    completedTasks--;
+  }
+  updateTaskProgress();
 }
