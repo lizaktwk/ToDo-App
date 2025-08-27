@@ -1,0 +1,21 @@
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node.js dependencies (if you ever add npm/yarn)
+node_modules/
+
+# Build/Dist outputs (if you use a bundler or compiler later)
+dist/
+build/
+
+# Environment variables
+.env
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp

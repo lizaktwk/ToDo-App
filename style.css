@@ -1,0 +1,223 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100dvh;
+  background: #a6f1e0;
+  background: linear-gradient(
+    146deg,
+    rgba(166, 241, 224, 1) 0%,
+    rgba(115, 199, 199, 1) 100%
+  );
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  /* padding: 20px; */
+  /* border: 3px solid red; */
+  width: 90%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.calendar {
+  font-size: 1.5rem;
+  background: #f7cfd8;
+  border-radius: 15px;
+  padding: 60px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  /* width: 300px; */
+  /* height: 300px; */
+}
+
+.progress {
+  width: 100%;
+}
+
+#progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #fff8c7;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+}
+
+#progress-bar-fill {
+  height: 100%;
+  background: #73c7c7;
+  width: 50%;
+  transition: width 0.3s ease;
+}
+
+.progress p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.add-task {
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin: 15px 0;
+  /* border: 3px solid green; */
+}
+
+#taskInput {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  background-color: #fff8c7;
+  width: 80%;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 1.2rem;
+}
+
+.add-task button {
+  font-family: "JetBrains Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  background-color: #fff8c7;
+  padding: 0 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-task button:hover {
+  background-color: #5ba5a5;
+}
+
+.my-tasks {
+  width: 100%;
+}
+.task-container {
+  background-color: #5ba5a5;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+
+  border-radius: 15px;
+  min-height: 60px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 100%; */
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+.custom-checkbox input {
+  display: none;
+
+  /* padding: 20px; */
+  /* top: 10px; */
+}
+
+.custom-checkbox .checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #fff8c7;
+  border: none;
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  /* padding: 30px; */
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  /* flex-grow: 1; */
+}
+
+/* On hover */
+.custom-checkbox:hover .checkmark {
+  /* background-color: white; */
+}
+
+/* When checked */
+.custom-checkbox input:checked + .checkmark {
+  /* background-color: #4caf50;
+  border-color: #4caf50; */
+}
+
+/* The tick */
+.custom-checkbox .checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 10px;
+  height: 25px;
+  border: solid #5ba5a5;
+  border-width: 0 4px 4px 0;
+}
+
+/* Show tick when checked */
+.custom-checkbox input:checked + .checkmark::after {
+  display: block;
+}
+
+.task-text {
+  padding: 0 10px;
+  width: fit-content;
+  font-size: 1.2rem;
+  text-align: left;
+  width: 70%;
+  /* border: 3px solid green; */
+}
+
+.delete-task {
+  background-color: #f7cfd8;
+  border-radius: 50%;
+  min-width: 50px;
+  min-height: 50px;
+  border: none;
+  cursor: pointer;
+}

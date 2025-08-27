@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>To-Do App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex-container">
+            <section class="calendar">
+                <p id="week-day">Wednesday</p>
+                <p id="date">20</p>
+                <p id="month">August</p>
+            </section>
+            <section class="progress">
+                <h1>Progress</h1>
+                <div id="progress-bar">
+                    <div id="progress-bar-fill"></div>
+                </div>
+                <p id="task-progress">2/3 Tasks completed</p>
+            </section>
+        </div>
+        <form class="add-task">
+            <input type="text" id="taskInput" placeholder="Add a new task" required>
+            <button type="submit" id="addTaskButton">Add</button>
+        </form>
+
+        <section class="my-tasks">
+            <h1>My Tasks</h1>
+            <div class="task-container">
+                <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <p class="task-text">Complete the project report</p>
+                <button class="delete-task" width="50px" height="50px">X</button>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>
